@@ -1,0 +1,6 @@
+prefecture,municipality,category,target_url
+東京都,東京都都市計画情報,urban_plan,https://www2.wagmap.jp/tokyo_tokeizu/
+東京都,国土地理院ハザード,hazard,https://disaportal.gsi.go.jp/
+東京都,渋谷区トップ,official,https://www.city.shibuya.tokyo.jp/
+東京都,新宿区道路,road,https://www.city.shinjuku.lg.jp/seikatsu/file18_03_00008.html
+東京都,新宿区トップ,official,https://www.city.shinjuku.lg.jp/
