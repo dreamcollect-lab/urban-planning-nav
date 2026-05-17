@@ -424,7 +424,27 @@ def filter_external_links(
         errors="coerce",
     ).fillna(999)
 
-    all_links["url_exists"] = all_links["url"].apply(lambda x: 1 if is_valid_url(x) else 0)
+    all_links["url_exists"] = all_links["url"].apply(
+        lambda x: 1 if is_valid_url(x) else 0
+    )
+
+    all_links["subcategory_key"] = (
+        all_links["subcategory"].astype(str).str.strip()
+    )
+
+    registered_subcategories = set(
+        all_links[
+            (all_links["url_exists"] == 1)
+            & (all_links["subcategory_key"] != "")
+        ]["subcategory_key"].tolist()
+    )
+
+    all_links = all_links[
+        ~(
+            (all_links["url_exists"] == 0)
+            & (all_links["subcategory_key"].isin(registered_subcategories))
+        )
+    ].copy()
 
     all_links = all_links.sort_values(
         by=["url_exists", "priority"],
