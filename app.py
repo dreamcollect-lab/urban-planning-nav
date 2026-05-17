@@ -264,19 +264,56 @@ footer {
     display: none;
 }
 
-/* 左下 Streamlit ロゴ */
-a[data-testid="stPoweredBy"] {
+/* =========================
+   Streamlit branding / toolbar 非表示 強化版
+========================= */
+
+header,
+footer,
+#MainMenu {
     display: none !important;
+    visibility: hidden !important;
 }
 
-/* 王冠・Deploy */
-div[data-testid="stAppDeployButton"] {
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+[data-testid="stToolbarActions"],
+[data-testid="stDecoration"],
+[data-testid="stStatusWidget"],
+[data-testid="stAppDeployButton"],
+[data-testid="stDeployButton"],
+[data-testid="stBaseButton-header"],
+[data-testid="stMainMenu"],
+[data-testid="stBottomBlockContainer"],
+[data-testid="stElementToolbar"],
+[data-testid="stPoweredBy"],
+[data-testid="stAppViewBlockContainer"] > div:first-child:empty {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
 }
 
-/* 右上GitHub等 */
-div[data-testid="stToolbarActions"] {
+/* Streamlitロゴリンク系 */
+a[href*="streamlit.io"],
+a[href*="streamlit.app"],
+a[aria-label*="Streamlit"],
+a[title*="Streamlit"] {
     display: none !important;
+    visibility: hidden !important;
+}
+
+/* 右下・左下に出る固定ボタン対策 */
+div[style*="position: fixed"],
+section[style*="position: fixed"] {
+    z-index: 0 !important;
+}
+
+/* iframe周辺の余白対策 */
+.stApp {
+    padding-bottom: 0 !important;
 }
 
 </style>
