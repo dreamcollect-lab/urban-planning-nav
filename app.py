@@ -728,14 +728,14 @@ render_html("""
 </div>            
 """)
 
-FEEDBACK_FORM_URL = "ここにGoogleフォームのURLを入れる"
+FEEDBACK_FORM_URL = "https://forms.gle/3ymwSTJ3jxo11RkP9"
 
 render_html(f"""
 <div class="note-box">
     <b>フィードバックのお願い</b><br>
     表示されている確認先に誤り・不足・追加希望がある場合は、
     下記フォームからお知らせください。<br><br>
-    <a class="open-link" href="{https://forms.gle/3ymwSTJ3jxo11RkP9}" target="_blank" rel="noopener noreferrer">
+    <a class="open-link" href="{FEEDBACK_FORM_URL}" target="_blank" rel="noopener noreferrer">
         フィードバックを送る
     </a>
 </div>
