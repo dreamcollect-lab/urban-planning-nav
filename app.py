@@ -725,5 +725,18 @@ render_html("""
 <div class="note-box">
     β版です。表示内容は該当判定ではなく、公式確認先の候補です。
     最終判断は自治体GIS、都道府県サイト、重要事項説明資料、自治体窓口で確認してください。
+</div>            
+""")
+
+FEEDBACK_FORM_URL = "ここにGoogleフォームのURLを入れる"
+
+render_html(f"""
+<div class="note-box">
+    <b>フィードバックのお願い</b><br>
+    表示されている確認先に誤り・不足・追加希望がある場合は、
+    下記フォームからお知らせください。<br><br>
+    <a class="open-link" href="{https://forms.gle/3ymwSTJ3jxo11RkP9}" target="_blank" rel="noopener noreferrer">
+        フィードバックを送る
+    </a>
 </div>
 """)
