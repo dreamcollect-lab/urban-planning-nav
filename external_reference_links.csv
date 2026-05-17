@@ -113,3 +113,12 @@ prefecture,municipality,category,subcategory,title,url,source_level,required_sta
 東京都,江戸川区,district_plan,用途地域,都市計画情報,,区公式,URL未登録,用途地域・建ぺい率・容積率確認用,municipality,1
 東京都,江戸川区,hazard,洪水,洪水ハザードマップ,,区公式,URL未登録,洪水リスク確認用,municipality,1
 東京都,江戸川区,building_guidance,建築確認,建築指導・建築確認関連,,区公式,URL未登録,建築制限・相談窓口確認用,municipality,1
+
+東京都,渋谷区,road,指定道路図,建築基準法の道路（指定道路図）,https://www.city.shibuya.tokyo.jp/kankyo/doro-kasen/doro-jorei/kenchiku_douro.html,区公式,URL登録済,公開型GISの道路種別から指定道路図を確認,municipality,1
+東京都,渋谷区,road,道路台帳,道路台帳平面図・区有通路平面図・路線図の閲覧,https://www.city.shibuya.tokyo.jp/kankyo/doro-kasen/doro-shinsei/dourodaicho_00001.html,区公式,URL登録済,道路台帳平面図・区有通路・路線図等の確認,municipality,2
+東京都,渋谷区,district_plan,用途地域,都市計画情報について,https://www.city.shibuya.tokyo.jp/kankyo/toshikeikaku/keikaku-info/toshi_soudan.html,区公式,URL登録済,用途地域・都市計画情報の確認,municipality,1
+東京都,渋谷区,district_plan,用途地域,渋谷区地図情報システム,https://www2.wagmap.jp/shibuya-sp/,区公式,URL登録済,都市計画情報・道路種別・道路関連情報・洪水ハザード等の入口,municipality,2
+東京都,渋谷区,hazard,洪水,洪水ハザードマップ・浸水実績,https://www.city.shibuya.tokyo.jp/bosai/bosai/bosai-manual-map/kozui_map.html,区公式,URL登録済,洪水ハザードマップ・浸水実績の確認,municipality,1
+東京都,渋谷区,hazard,洪水,渋谷区洪水ハザードマップPDF,https://bosai.city.shibuya.tokyo.jp/assets/assets_anzen_000063823.pdf,区公式,URL登録済,洪水ハザードマップPDF,municipality,2
+東京都,渋谷区,building_guidance,建築確認,建築の手続き,https://www.city.shibuya.tokyo.jp/kankyo/kenchiku/kenchiku-tetsuzuki/kenchiku-shoshiki.html,区公式,URL登録済,建築確認・建築手続き関連,municipality,1
+東京都,渋谷区,building_guidance,建築相談,建築計画の相談について,https://www.city.shibuya.tokyo.jp/kankyo/kenchiku/kenchiku-tetsuzuki/kenchiku-sodan.html,区公式,URL登録済,建築計画に関する相談窓口,municipality,2
