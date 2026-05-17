@@ -26,16 +26,16 @@ EXTERNAL_CSV = BASE_DIR / "external_reference_links.csv"
 # ログイン
 # =========================================================
 
-PASSWORD = "test123"
+# PASSWORD = "test123"
 
-password_input = st.sidebar.text_input(
-    "ログインパスワード",
-    type="password",
-)
+# password_input = st.sidebar.text_input(
+#    "ログインパスワード",
+#    type="password",
+#)
 
-if password_input != PASSWORD:
-    st.sidebar.info("パスワードを入力してください")
-    st.stop()
+#if password_input != PASSWORD:
+#    st.sidebar.info("パスワードを入力してください")
+#    st.stop()
 
 
 # =========================================================
