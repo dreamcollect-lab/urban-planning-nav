@@ -1,4 +1,3 @@
-import hashlib
 import html as html_lib
 from pathlib import Path
 from textwrap import dedent
@@ -20,22 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 RANKED_CSV = BASE_DIR / "official_site_links_ranked.csv"
 EXTERNAL_CSV = BASE_DIR / "external_reference_links.csv"
-
-
-# =========================================================
-# ログイン
-# =========================================================
-
-# PASSWORD = "test123"
-
-# password_input = st.sidebar.text_input(
-#    "ログインパスワード",
-#    type="password",
-#)
-
-#if password_input != PASSWORD:
-#    st.sidebar.info("パスワードを入力してください")
-#    st.stop()
+EXTERNAL_ADD_CSV = BASE_DIR / "external_reference_links.add.csv"
 
 
 # =========================================================
@@ -47,6 +31,12 @@ def render_html(markup: str):
         dedent(markup).strip(),
         unsafe_allow_html=True,
     )
+
+
+def clean_text(value) -> str:
+    if pd.isna(value):
+        return ""
+    return str(value).strip()
 
 
 def esc(value) -> str:
@@ -208,16 +198,6 @@ html {
     font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 30px;
-    }
-}
-
-/* =========================
-   Streamlit UI 非表示
-========================= */
-
 header[data-testid="stHeader"] {
     display: none;
 }
@@ -246,9 +226,13 @@ footer {
     display: none;
 }
 
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 30px;
+    }
+}
 </style>
 """
-
 
 render_html(CUSTOM_CSS)
 
@@ -334,17 +318,6 @@ def ensure_columns(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
     return df
 
 
-def clean_text(value) -> str:
-    if pd.isna(value):
-        return ""
-    return str(value).strip()
-
-
-def make_key(*parts) -> str:
-    raw = "|".join(clean_text(part) for part in parts)
-    return hashlib.md5(raw.encode("utf-8")).hexdigest()
-
-
 def detect_municipality(address: str, municipalities: list[str]) -> str:
     address = clean_text(address)
 
@@ -394,9 +367,7 @@ def clean_title(title, url) -> str:
     ]
 
     if title in bad_titles:
-        if is_valid_url(url):
-            return "ページタイトル未整理"
-        return "確認先未登録"
+        return "ページタイトル未整理"
 
     return title
 
@@ -453,7 +424,14 @@ def filter_external_links(
         errors="coerce",
     ).fillna(999)
 
-    return all_links.sort_values(by="priority", ascending=True)
+    all_links["url_exists"] = all_links["url"].apply(lambda x: 1 if is_valid_url(x) else 0)
+
+    all_links = all_links.sort_values(
+        by=["url_exists", "priority"],
+        ascending=[False, True],
+    )
+
+    return all_links
 
 
 def render_reference_link(
@@ -529,9 +507,9 @@ def show_internal_links(
         render_reference_link(
             title=row.get("title", ""),
             url=row.get("url", ""),
-            source_level="区公式候補",
+            source_level="区公式",
             required_status="確認候補",
-            memo="クロール候補",
+            memo="公式サイト内ページ",
             subcategory="",
         )
 
@@ -573,6 +551,13 @@ def show_external_links(external_links: pd.DataFrame):
 
 ranked_df = load_csv(RANKED_CSV)
 external_df = load_csv(EXTERNAL_CSV)
+external_add_df = load_csv(EXTERNAL_ADD_CSV)
+
+if not external_add_df.empty:
+    external_df = pd.concat(
+        [external_df, external_add_df],
+        ignore_index=True,
+    )
 
 ranked_required_columns = [
     "base_municipality",
@@ -686,22 +671,23 @@ for category, info in CATEGORY_INFO.items():
 
         shown_any = False
 
-        if show_internal_links(
-            category_df=category_df,
-            rank_name="優先確認",
-            max_count=3,
-        ):
-            shown_any = True
-
-        if show_internal_links(
-            category_df=category_df,
-            rank_name="関連確認",
-            max_count=2,
-        ):
-            shown_any = True
-
         if show_external_links(external_links):
             shown_any = True
+
+        if not shown_any:
+            if show_internal_links(
+                category_df=category_df,
+                rank_name="優先確認",
+                max_count=3,
+            ):
+                shown_any = True
+
+            if show_internal_links(
+                category_df=category_df,
+                rank_name="関連確認",
+                max_count=2,
+            ):
+                shown_any = True
 
         if not shown_any:
             render_reference_link(
