@@ -231,6 +231,54 @@ footer {
         font-size: 30px;
     }
 }
+
+/* =========================
+   Streamlit UI 非表示
+========================= */
+
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+div[data-testid="stToolbar"] {
+    display: none;
+}
+
+button[kind="header"] {
+    display: none;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+[data-testid="stStatusWidget"] {
+    display: none;
+}
+
+/* 左下 Streamlit ロゴ */
+a[data-testid="stPoweredBy"] {
+    display: none !important;
+}
+
+/* 王冠・Deploy */
+div[data-testid="stAppDeployButton"] {
+    display: none !important;
+}
+
+/* 右上GitHub等 */
+div[data-testid="stToolbarActions"] {
+    display: none !important;
+}
+
 </style>
 """
 
