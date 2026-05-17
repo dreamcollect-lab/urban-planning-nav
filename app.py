@@ -213,8 +213,42 @@ html {
         font-size: 30px;
     }
 }
+
+/* =========================
+   Streamlit UI 非表示
+========================= */
+
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+div[data-testid="stToolbar"] {
+    display: none;
+}
+
+button[kind="header"] {
+    display: none;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+[data-testid="stStatusWidget"] {
+    display: none;
+}
+
 </style>
 """
+
 
 render_html(CUSTOM_CSS)
 
