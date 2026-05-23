@@ -513,31 +513,29 @@ def filter_external_links(
         lambda x: 1 if is_valid_url(x) else 0
     )
 
-    all_links["subcategory_key"] = (
-        all_links["subcategory"].astype(str).str.strip()
+    status_order = {
+        "URL登録済": 1,
+        "確認候補": 2,
+        "URL未登録": 3,
+    }
+
+    all_links["status_priority"] = (
+        all_links["required_status"]
+        .astype(str)
+        .str.strip()
+        .map(status_order)
+        .fillna(9)
     )
 
-    registered_subcategories = set(
-        all_links[
-            (all_links["url_exists"] == 1)
-            & (all_links["subcategory_key"] != "")
-        ]["subcategory_key"].tolist()
-    )
-
-    all_links = all_links[
-        ~(
-            (all_links["url_exists"] == 0)
-            & (all_links["subcategory_key"].isin(registered_subcategories))
-        )
-    ].copy()
+    if (all_links["url_exists"] == 1).any():
+        all_links = all_links[all_links["url_exists"] == 1].copy()
 
     all_links = all_links.sort_values(
-        by=["url_exists", "priority"],
-        ascending=[False, True],
+        by=["url_exists", "status_priority", "priority"],
+        ascending=[False, True, True],
     )
 
     return all_links
-
 
 def render_reference_link(
     title: str,

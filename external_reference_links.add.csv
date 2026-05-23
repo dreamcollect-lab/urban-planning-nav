@@ -106,3 +106,8 @@
 東京都,足立区,district_plan,都市計画情報,都市計画情報,https://www.city.adachi.tokyo.jp/machi/toshi/index.html,区公式候補,確認候補,クロール結果から抽出した用途地域・都市計画関連の確認候補,municipality,10
 東京都,足立区,hazard,ハザード,足立区洪水・内水・高潮ハザードマップ（電子ブック版,https://www.city.adachi.tokyo.jp/miryoku/hon/ebook.html,区公式候補,確認候補,クロール結果から抽出した防災・ハザード関連の確認候補,municipality,10
 東京都,足立区,hazard,ハザード,洪水ハザードマップ,https://www.city.adachi.tokyo.jp/kikaku/bosai/bosai/hazard-map-k.html,区公式候補,確認候補,クロール結果から抽出した防災・ハザード関連の確認候補,municipality,10
+東京都,世田谷区,district_plan,用途地域,世田谷区都市計画情報,https://www.sonicweb-asp.jp/setagaya/map?theme=th_15,区公式候補,確認候補,用途地域・都市計画情報の確認候補,municipality,10
+東京都,世田谷区,building_guidance,建築確認,建築確認・建築指導関連,https://www.city.setagaya.lg.jp/mokuji/sumai/002/index.html,区公式候補,確認候補,建築確認・建築指導関連の確認候補,municipality,20
+東京都,江東区,road,道路台帳,道路台帳・資料,https://www.city.koto.lg.jp/machizukuri/dorokyoryo/dorodaicho/index.html,区公式候補,確認候補,道路台帳・道路関係資料の確認候補,municipality,10
+東京都,江東区,district_plan,用途地域,都市計画・用途地域等について,https://www.city.koto.lg.jp/machizukuri/toshi/toshikekaku/index.html,区公式候補,確認候補,用途地域・都市計画情報の確認候補,municipality,10
+
