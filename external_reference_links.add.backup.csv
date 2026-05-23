@@ -1,0 +1,20 @@
+﻿prefecture,municipality,category,subcategory,title,url,source_level,required_status,memo,display_scope,priority
+東京都,新宿区,road,指定道路図,建築基準法の道路種別の確認,https://www.city.shinjuku.lg.jp/seikatsu/file18_03_00008.html,区公式,URL登録済,新宿区みんなのGISから建築基準法の道路種別を確認,municipality,1
+東京都,新宿区,road,道路台帳,道路台帳・街区基準点の閲覧,https://www.city.shinjuku.lg.jp/seikatsu/file16_02_00001.html,区公式,URL登録済,道路台帳及び街区基準点の閲覧,municipality,2
+東京都,新宿区,district_plan,用途地域,都市計画情報提供（用途地域等）,https://www.city.shinjuku.lg.jp/kusei/index13_08.html,区公式,URL登録済,用途地域等・都市施設等の確認,municipality,1
+東京都,新宿区,district_plan,用途地域,都市計画情報等の調べ方（不動産調査用）,https://www.city.shinjuku.lg.jp/kusei/toshikei01_000001_00065.html,区公式,URL登録済,不動産調査用の都市計画情報確認ページ,municipality,2
+東京都,新宿区,hazard,洪水,新宿区洪水ハザードマップ,https://www.city.shinjuku.lg.jp/anzen/file03_00016.html,区公式,URL登録済,洪水ハザードマップ確認,municipality,1
+東京都,新宿区,hazard,洪水,新宿区洪水ハザードマップGIS,https://www.city.shinjuku.lg.jp/anzen/htdocs/index.html,区公式,URL登録済,洪水ハザードマップの地図表示,municipality,2
+東京都,新宿区,building_guidance,建築確認,都市計画部 建築指導課,https://www.city.shinjuku.lg.jp/soshiki/400900kenchiku.html,区公式,URL登録済,建築基準法・地区計画・都市計画法等の確認窓口,municipality,1
+東京都,新宿区,building_guidance,位置指定道路,位置指定道路の指定、変更及び取消し,https://www.city.shinjuku.lg.jp/seikatsu/file18_03_00009.html,区公式,URL登録済,位置指定道路関連の確認,municipality,2
+東京都,港区,road,指定道路図,建築基準法の道路種別,https://www.city.minato.tokyo.jp/kenchikushinsa/douroshubetsu/shubetsu.html,区公式,URL登録済,指定道路図で道路種別を確認,municipality,1
+東京都,港区,road,道路台帳,道路台帳平面図・路線番号図のWeb閲覧,https://www.city.minato.tokyo.jp/dourodaichou/kankyo-machi/kotsu/shisaku/dorodaicho.html,区公式,URL登録済,道路台帳平面図・路線番号図の確認,municipality,2
+東京都,港区,district_plan,用途地域,用途地域等の検索,https://www.city.minato.tokyo.jp/toshikeikaku/toshikeikaku/youtochiiki/youtochiiki.html,区公式,URL登録済,用途地域等の確認,municipality,1
+東京都,港区,district_plan,用途地域,港区用途地域地区等図,https://www.city.minato.tokyo.jp/toshikeikaku/toshikeikaku/toshishisetsu/youtochiikichikutouzu.html,区公式,URL登録済,用途地域地区等図の確認,municipality,2
+東京都,港区,hazard,ハザード,ハザードマップ,https://www.city.minato.tokyo.jp/bousai/hazard_map/hazard_map.html,区公式,URL登録済,浸水・高潮・土砂災害等のハザード情報,municipality,1
+東京都,港区,hazard,浸水,浸水ハザードマップ,https://www.city.minato.tokyo.jp/dobokukeikaku/bosai-anzen/bosai/shinsui/hazard-map/,区公式,URL登録済,浸水ハザードマップ確認,municipality,2
+東京都,港区,building_guidance,位置指定道路,道路の位置指定・廃止,https://www.city.minato.tokyo.jp/kaihatsuchousei/kankyo-machi/kenchiku/doro.html,区公式,URL登録済,道路位置指定・廃止関連,municipality,1
+東京都,世田谷区,road,指定道路図,指定道路図,https://www.sonicweb-asp.jp/setagaya/map?theme=shiteidouro,区公式,URL登録済,建築基準法第42条の道路種別を確認,municipality,1
+東京都,世田谷区,hazard,ハザード,ハザードマップ,https://www.city.setagaya.lg.jp/kurashi/kyuukyuu/category/12840.html,区公式,URL登録済,世田谷区ハザードマップ一覧,municipality,1
+東京都,世田谷区,hazard,洪水・内水,世田谷区洪水・内水氾濫ハザードマップ,https://www.city.setagaya.lg.jp/02049/606.html,区公式,URL登録済,洪水・内水氾濫ハザードマップ確認,municipality,2
+東京都,品川区,district_plan,用途地域,用途地域等指定図,https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-kenchiku/kankyo-kenchiku-tebiki/hpg000003769.html,区公式,URL登録済,しながわMAPで用途地域・道路台帳・指定道路図等を確認,municipality,1
